@@ -1,0 +1,34 @@
+/* Container setup */
+#animated-container {
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+    height: auto; /* Adjust based on your design */
+}
+
+/* y-scroll wrapper setup */
+.y-scroll-wrapper {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+}
+
+/* y-scroll content setup */
+.y-scroll-content {
+    display: flex;
+    width: 200%; /* Twice the width of the wrapper for seamless scroll */
+    animation: y-scroll 20s linear infinite;
+}
+
+@keyframes y-scroll {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-50%);
+        /* just remove the negative sign to flip the animation */
+    }
+}
+

@@ -1,0 +1,8 @@
+.bg-gradient-blue {
+    background: rgb(9, 21, 51);
+    background: radial-gradient(
+        circle,
+        rgba(9, 21, 51, 1) 53%,
+        rgba(13, 30, 74, 1) 90%
+    );
+}
