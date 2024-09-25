@@ -12,6 +12,7 @@ class Listing extends Model
     protected $primaryKey  = 'id';
     protected $fillable = [
         'user_id',
+        'user_name',
         'place_name',
         'place_description',
         'place_type',
@@ -27,6 +28,10 @@ class Listing extends Model
     ];
     protected $dates  = ['created_at', 'updated_at'];
 
+    public function savedListings()
+    {
+        return $this->hasMany(SavedListing::class);
+    }
 
     public function scopeFilter($query, array $filters)
     {

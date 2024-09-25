@@ -1,0 +1,20 @@
+@keyframes open-details {
+    from {
+        height: 0;
+    }
+
+    to {
+        height: var(--content-height);
+    }
+}
+
+details[open] .faq-content {
+    animation: open-details 0.3s ease-in-out forwards;
+    height: auto;
+    overflow: hidden;
+}
+
+details:not([open]) .faq-content {
+    height: 0;
+    overflow: hidden;
+}

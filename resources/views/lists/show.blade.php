@@ -26,6 +26,11 @@
                         </button>
                     </form>
                 @endif
+                <button data-listing-id="{{ $listing->id }}"
+                    class="save-listing-btn mx-1  border border-gray-500 px-4 py-2 rounded-lg text-navy-900 hover:bg-blue-200 focus:outline-none focus:ring-2 focus:ring-gray-400 transition duration-300 ease-in-out">
+                    <img src="{{ asset('images/ribbon.png') }}" alt="Saved img" title="Saved Listing">
+                    {{-- <input id="listing_id" name="listing_id" type="text" hidden> --}}
+                </button>
             </div>
         </div>
 
@@ -64,7 +69,9 @@
         </div>
     </div>
 
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script>
+        // COPY ALL LISTING DETAILS
         function copyListingDetails(event) {
             // JavaScript to Copy Text to Clipboard
             event.preventDefault(); // Prevent the default anchor action
@@ -86,7 +93,7 @@
                 alert('Failed to copy: ' + error);
             });
         }
-
+        // COPY PHONE NUMBER
         function copyPhoneNumber(event) {
             event.preventDefault();
 
@@ -98,7 +105,6 @@
             const phoneDetails = "{{ $listing->place_contact_num }}";
             navigator.clipboard.writeText(phoneDetails);
         }
-
         // COPY EMAIL
         function copyEmail(event) {
             event.preventDefault();
@@ -110,6 +116,32 @@
             const emailDetails = "{{ $listing->place_email }}";
             navigator.clipboard.writeText(emailDetails);
         }
+
+        // START OF SAVED LISTING FUNCTION
+
+        $(document).ready(function() {
+            $('.save-listing-btn').on('click', function() {
+                let listingId = $(this).data('listing-id');
+
+                $.ajax({
+                    url: '{{ route('save.listing') }}',
+                    type: 'POST',
+                    data: {
+                        _token: '{{ csrf_token() }}',
+                        listing_id: listingId
+                    },
+                    success: function(response) {
+                        alert(response.message);
+                    },
+                    error: function(xhr) {
+                        console.error(xhr.responseText);
+                        alert('An error occurred. Please try again.');
+                    }
+                });
+            });
+        });
+        // END OF SAVED LISTING FUNCTION
     </script>
+
 
 </x-app-layout>

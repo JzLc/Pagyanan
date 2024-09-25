@@ -12,6 +12,8 @@
     <link rel="preconnect" href="https://fonts.bunny.net">
     <link href="https://fonts.bunny.net/css?family=figtree:400,500,600&display=swap" rel="stylesheet" />
     <link href="{{ asset('css/blueGradient.css') }}" rel="stylesheet" />
+    <link href="{{ asset('css/main.css') }}" rel="stylesheet" />
+    {{-- <link href="{{ asset('css/faq-animation.css') }}" rel="stylesheet" /> --}}
 
     <!-- Scripts -->
     @vite(['resources/css/app.css', 'resources/js/app.js'])
@@ -35,7 +37,7 @@
             {{ $slot }}
         </main>
     </div>
-    <x-footer></x-footer>
+    <x-footer />
 
     {{-- CUSTOM TEXT COLORS --}}
     <style>

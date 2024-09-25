@@ -1,5 +1,5 @@
  <!-- FAQs Section -->
- <section class="bg-white py-16">
+ <section id="faq" class="bg-white py-16">
      <div class="max-w-7xl mx-auto px-4">
          <h2 class="text-4xl font-bold text-gray-900 text-center">FAQs</h2>
          <p class="text-gray-600 text-center mt-4">Find answers to common questions about renting and listing
@@ -10,7 +10,7 @@
                  <details class="group">
                      <summary class="flex justify-between items-center cursor-pointer">
                          <h3 class="text-lg font-bold text-gray-900">How do I list my property?</h3>
-                         <span class="group-open:rotate-180 transform transition-transform">
+                         <span class="transform transition-transform duration-300 ease-in-out group-open:rotate-180">
                              <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
                                  stroke="currentColor">
                                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -18,15 +18,16 @@
                              </svg>
                          </span>
                      </summary>
-                     <p class="mt-2 text-gray-500 ">To list your property, simply create an account and click on the
-                         “List Property” button. Then enter the details and publish your listing for tenants to view.
+                     <p class="faq-content mt-2 text-gray-500 transition-all duration-300 ease-in-out">
+                         To list your property, simply create an account and click on the “List Property” button. Then
+                         enter the details and publish your listing for tenants to view.
                      </p>
                  </details>
                  <!-- FAQ 2 -->
                  <details class="group">
                      <summary class="flex justify-between items-center cursor-pointer">
                          <h3 class="text-lg font-bold text-gray-900">What can I list?</h3>
-                         <span class="group-open:rotate-180 transform transition-transform">
+                         <span class="transform transition-transform duration-300 ease-in-out group-open:rotate-180">
                              <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
                                  stroke="currentColor">
                                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -34,15 +35,17 @@
                              </svg>
                          </span>
                      </summary>
-                     <p class="mt-2 text-gray-500">You can list any type of rental property, from apartments and
-                         houses to vacation homes and short-term rentals.</p>
+                     <p class="faq-content mt-2 text-gray-500 transition-all duration-300 ease-in-out">
+                         You can list any type of rental property, from apartments and houses to vacation homes and
+                         short-term rentals.
+                     </p>
                  </details>
 
                  <!-- FAQ 3 -->
                  <details class="group">
                      <summary class="flex justify-between items-center cursor-pointer">
                          <h3 class="text-lg font-bold text-gray-900">How to find rentals?</h3>
-                         <span class="group-open:rotate-180 transform transition-transform">
+                         <span class="transform transition-transform duration-300 ease-in-out group-open:rotate-180">
                              <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
                                  stroke="currentColor">
                                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -50,15 +53,17 @@
                              </svg>
                          </span>
                      </summary>
-                     <p class="mt-2 text-gray-500">You can find rentals by clicking the "Browse Now" and "Explore"
-                         buttons in the upper section of the page</p>
+                     <p class="faq-content mt-2 text-gray-500 transition-all duration-300 ease-in-out">
+                         You can find rentals by clicking the "Browse Now" and "Explore"
+                         buttons in the upper section of the page
+                     </p>
                  </details>
 
                  <!-- FAQ 4 -->
                  <details class="group">
                      <summary class="flex justify-between items-center cursor-pointer">
                          <h3 class="text-lg font-bold text-gray-900">Is my data safe?</h3>
-                         <span class="group-open:rotate-180 transform transition-transform">
+                         <span class="transform transition-transform duration-300 ease-in-out group-open:rotate-180">
                              <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
                                  stroke="currentColor">
                                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -66,7 +71,8 @@
                              </svg>
                          </span>
                      </summary>
-                     <p class="mt-2 text-gray-500">All your data and credentials is all safe, we prioritize your safety.
+                     <p class="faq-content mt-2 text-gray-500 transition-all duration-300 ease-in-out">
+                         All your data and credentials is all safe, we prioritize your safety.
                      </p>
                  </details>
 
@@ -75,7 +81,7 @@
                  <details class="group">
                      <summary class="flex justify-between items-center cursor-pointer">
                          <h3 class="text-lg font-bold text-gray-900">Can I edit listings?</h3>
-                         <span class="group-open:rotate-180 transform transition-transform">
+                         <span class="transform transition-transform duration-300 ease-in-out group-open:rotate-180">
                              <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
                                  stroke="currentColor">
                                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -83,7 +89,8 @@
                              </svg>
                          </span>
                      </summary>
-                     <p class="mt-2 text-gray-500">Certainly, you can edit your listings on "Your Listings" tab on
+                     <p class="faq-content mt-2 text-gray-500 transition-all duration-300 ease-in-out">
+                         Certainly, you can edit your listings on "Your Listings" tab on
                          navigation bar.</p>
                  </details>
 
@@ -91,3 +98,4 @@
          </div>
      </div>
  </section>
+

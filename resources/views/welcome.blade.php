@@ -1,7 +1,7 @@
 <x-app-layout>
 
     <!-- Hero Section -->
-    <header class="bg-gradient-blue text-white text-center py-56">
+    <header id="homepage" class="bg-gradient-blue text-white text-center py-56">
         <div class="container mx-auto px-6">
             <h1 class="text-4xl sm:text-5xl font-bold mb-4">Welcome to Pagyanan</h1>
             <p class="text-lg sm:text-xl mb-8">Your one-stop solution for finding the perfect space, room, or dormitory.
@@ -71,9 +71,8 @@
     </section>
 
     {{-- FAQ SECTION --}}
-    <x-faq></x-faq>
+    <x-faq />
 
     {{-- CONTACT US SECTION --}}
-    <!-- Contact Section -->
-    <x-contact-us></x-contact-us>
+    <x-contact-us />
 </x-app-layout>

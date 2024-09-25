@@ -21,11 +21,11 @@
         <div class="">
             <h3 class="font-bold text-xl mb-4  text-black">Quick Links</h3>
             <ul class="space-y-2">
-                <li><a href="#" class="text-gray-600 hover:underline">Home Page</a></li>
-                <li><a href="#" class="text-gray-600 hover:underline">About Us</a></li>
-                <li><a href="#" class="text-gray-600 hover:underline">Contact Us</a></li>
-                <li><a href="#" class="text-gray-600 hover:underline">FAQs</a></li>
-                <li><a href="#" class="text-gray-600 hover:underline">Blog</a></li>
+                <li><a href="/#homepage" class="text-gray-600 hover:underline">Home Page</a></li>
+                <li><a href="/#about-us" class="text-gray-600 hover:underline">About Us</a></li>
+                <li><a href="/#contact-us" class="text-gray-600 hover:underline">Contact Us</a></li>
+                <li><a href="/#faq" class="text-gray-600 hover:underline">FAQs</a></li>
+                <li><a href="/jastin" class="text-gray-600 hover:underline">Portfolio</a></li>
             </ul>
         </div>
 

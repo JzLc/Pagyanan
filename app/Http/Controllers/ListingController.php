@@ -48,6 +48,7 @@ class ListingController extends Controller
         ]);
         // Create a new listing with validated data
         $validatedData['user_id'] = auth()->id();
+        $validatedData['user_name'] = auth()->user()->name;
 
         Listing::create($validatedData);
         // Redirect to the listings index or another route with a success message
@@ -68,7 +69,6 @@ class ListingController extends Controller
             return redirect()->back()->with('error', 'Listing not found');
         }
         return view('lists.show')->with('listing', $listing);
-
     }
 
     /**
@@ -102,6 +102,7 @@ class ListingController extends Controller
         ]);
 
         $validatedData['user_id'] = auth()->id();
+        $validatedData['user_name'] = auth()->user()->name;
 
         // Update the listing with validated data
         $listing->update($validatedData);
@@ -186,6 +187,5 @@ class ListingController extends Controller
             return redirect()->back()->with('error', 'Listing not found');
         }
         return view('guest.show')->with('listing', $listing);
-
     }
 }

@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('listings', function (Blueprint $table) {
             $table->id();
-            // $table->user_id();
+            $table->string('user_name');
             $table->string('place_name');
             $table->longText('place_description');
             $table->string('place_type');

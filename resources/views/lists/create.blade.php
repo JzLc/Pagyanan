@@ -1,6 +1,6 @@
 <x-app-layout class="">
-    <h1 class="flex justify-center text-4xl font-bold text-gray-900 shadow-md py-4">Create Listing</h1>
-    <div class="max-w-7xl py-2 mx-auto flex justify-center text-gray-800 ">
+    <h1 class="flex justify-center text-4xl font-bold text-gray-900 shadow-md py-4 ">Create Listing</h1>
+    <div class="max-w-7xl py-2 mx-auto flex justify-center text-gray-800 my-8 ">
         <!-- Form to Create New Listing -->
         <form action="{{ route('listing.store') }}" method="POST" class="py-4 border border-solid-gray-900 shadow-xl">
             @csrf

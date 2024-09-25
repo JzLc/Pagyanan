@@ -1,4 +1,4 @@
-<section id="contact" class="bg-white py-16 ">
+<section id="contact-us" class="bg-white py-16 ">
     <div class="max-w-7xl mx-auto text-center p-4 border-t border-gray-200">
         <h2 class="text-4xl font-bold">Contact Us</h2>
         <p class="mt-4 text-gray-600">Have any questions? Reach out to us anytime!</p>

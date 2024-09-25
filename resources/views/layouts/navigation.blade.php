@@ -22,6 +22,11 @@
                         <x-nav-link :href="route('listings.user', ['user_id' => auth()->user()->id])" :active="request()->routeIs('listings.user')">
                             {{ __('Your Listings') }}
                         </x-nav-link>
+                        
+                        {{-- YOUR SAVED LISTINGS --}}
+                        <x-nav-link :href="route('listings.saved', ['user_id' => auth()->user()->id])" :active="request()->routeIs('listings.saved')">
+                            {{ __('Saved Listings') }}
+                        </x-nav-link>
                     @endauth
                 </div>
 
