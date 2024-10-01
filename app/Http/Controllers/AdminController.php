@@ -2,25 +2,52 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Listing;
+use App\Models\User;
 use Illuminate\Http\Request;
 
 class AdminController extends Controller
 {
-    public function users()
+
+    public function index()
     {
-        return view('admin.users');
+        config(['app.name' => 'Dashboard']);
+        return view('admin.dashboard');
+    }
+
+    public function users(Request $request)
+    {
+        config(['app.name' => 'Users']);
+
+        $sort = $request->input('sort', 'id');
+        $order = $request->input('order', 'asc');
+
+        $users = User::orderBy($sort, $order)
+            ->paginate(15);
+
+        return view('admin.users')->with('users', $users);
     }
 
     public function listings()
     {
-        // Fetch data for listings
-        $listings = [
-            ['owner' => 'John Doe', 'place_name' => 'Apartment 1', 'type' => 'Apartment', 'location' => 'NYC', 'monthly_rent' => 1200],
-            ['owner' => 'Jane Smith', 'place_name' => 'House 2', 'type' => 'House', 'location' => 'LA', 'monthly_rent' => 2500],
-        ];
-
-        return view('admin.listings', compact('listings'));
+        config(['app.name' => 'Listings']);
+        $listings = Listing::paginate(15);
+        return view('admin.listings')->with('listings', $listings);
     }
 
-    
+    public function archives()
+    {
+        config(['app.name' => 'Archives']);
+        $archivedListings = Listing::onlyTrashed()->get();
+        // dd($archivedListings);
+        return view('admin.archives')->with('archivedListings', $archivedListings);
+    }
+
+    // public function archived()
+    // {
+    //     $archivedListings = Listing::onlyTrashed()->get();
+    //     return view('admin.archives')->with($archivedListings, 'archivedListings');
+    // }
+
+
 }

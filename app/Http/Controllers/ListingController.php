@@ -188,4 +188,29 @@ class ListingController extends Controller
         }
         return view('guest.show')->with('listing', $listing);
     }
+
+    // VIEW ARCHIVES
+    public function archived()
+    {
+        $archivedListings = Listing::onlyTrashed()->get();
+        return view('admin.archives')->with($archivedListings, 'archivedListings');
+    }
+
+    // ARCHIVE lISTING
+    public function archive($id)
+    {
+        $listings = Listing::findOrFail($id);
+        $listings->delete();
+
+        return redirect()->route('listings.index')->with('success', 'Listing archived successfully.');
+    }
+
+    // RESTORE ARCHIVED
+    public function restore($id)
+    {
+        $listings = Listing::withTrashed()->findOrFail($id);
+        $listings->restore();
+
+        return redirect()->route('listings.archived')->with('success', 'Listing restored successfully.');
+    }
 }

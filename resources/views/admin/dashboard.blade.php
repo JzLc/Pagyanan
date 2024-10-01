@@ -1,30 +1,61 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Admin Dashboard</title>
-    @vite(['resources/css/app.css', 'resources/js/app.js'])
-</head>
-<body class="bg-gray-100">
-    <div class="min-h-screen flex flex-col">
-        <header class="bg-blue-600 text-white p-4">
-            <h1 class="text-xl font-bold">Admin Dashboard</h1>
-        </header>
+@extends('layouts.admin')
 
-        <main class="flex-1 p-4">
-            <div class="bg-white rounded-lg shadow">
-                <div class="border-b">
-                    <nav class="flex">
-                        <a href="{{ route('admin.users') }}" class="p-4 text-gray-600 hover:bg-gray-200">Users</a>
-                        <a href="{{ route('admin.listings') }}" class="p-4 text-gray-600 hover:bg-gray-200">Listings</a>
-                    </nav>
-                </div>
-                <div class="p-4">
-                    @yield('content')
-                </div>
+@section('content')
+
+<div class="flex-grow p-6">
+    <!-- Statistics cards -->
+    <div class="grid grid-cols-4 gap-6 mb-6">
+        <div class="bg-white p-6 rounded-lg shadow-md">
+            <div class="flex items-center justify-between">
+                <span class="text-gray-600">Total Views</span>
+                <span class="material-icons">visibility</span>
             </div>
-        </main>
+            <div class="mt-4 text-2xl font-semibold">$3.456K</div>
+            <div class="mt-2 text-sm text-green-500">0.43% ↑</div>
+        </div>
+        <div class="bg-white p-6 rounded-lg shadow-md">
+            <div class="flex items-center justify-between">
+                <span class="text-gray-600">Total Profit</span>
+                <span class="material-icons">shopping_cart</span>
+            </div>
+            <div class="mt-4 text-2xl font-semibold">$45,2K</div>
+            <div class="mt-2 text-sm text-green-500">4.35% ↑</div>
+        </div>
+        <div class="bg-white p-6 rounded-lg shadow-md">
+            <div class="flex items-center justify-between">
+                <span class="text-gray-600">Total Products</span>
+                <span class="material-icons">inventory_2</span>
+            </div>
+            <div class="mt-4 text-2xl font-semibold">2.450</div>
+            <div class="mt-2 text-sm text-green-500">2.59% ↑</div>
+        </div>
+        <div class="bg-white p-6 rounded-lg shadow-md">
+            <div class="flex items-center justify-between">
+                <span class="text-gray-600">Total Users</span>
+                <span class="material-icons">people</span>
+            </div>
+            <div class="mt-4 text-2xl font-semibold">3.456</div>
+            <div class="mt-2 text-sm text-red-500">0.95% ↓</div>
+        </div>
     </div>
-</body>
-</html>
+
+    <!-- Charts -->
+    <div class="grid grid-cols-3 gap-6">
+        <div class="col-span-2 bg-white p-6 rounded-lg shadow-md">
+            <h3 class="text-lg font-semibold mb-4">Total Revenue and Sales</h3>
+            <!-- Placeholder for Chart -->
+            <div class="w-full h-64 bg-gray-200 flex items-center justify-center">
+                <span>Chart goes here</span>
+            </div>
+        </div>
+        <div class="bg-white p-6 rounded-lg shadow-md">
+            <h3 class="text-lg font-semibold mb-4">Profit this week</h3>
+            <!-- Placeholder for Bar Chart -->
+            <div class="w-full h-64 bg-gray-200 flex items-center justify-center">
+                <span>Bar Chart goes here</span>
+            </div>
+        </div>
+    </div>
+</div>
+
+@endsection

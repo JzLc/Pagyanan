@@ -2,6 +2,8 @@
 
 namespace Database\Factories;
 
+use App\Models\Listing;
+use App\Models\User;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
@@ -9,25 +11,27 @@ use Illuminate\Database\Eloquent\Factories\Factory;
  */
 class ListingFactory extends Factory
 {
-    /**
-     * Define the model's default state.
-     *
-     * @return array<string, mixed>
-     */
+    protected $model = Listing::class;
+
     public function definition(): array
     {
+
+        $user = User::factory()->create();
+
         return [
+            'user_id' =>  $user->id,
+            'user_name' =>  $user->name,
             'place_name' => fake()->name(),
-            'place_description' => fake()->sentence(),
-            'place_type' => 'dorm',
-            'place_region' => 'CAR',
-            'place_province_city' => 'abra',
-            'place_municipality_town' => 'lagangilang',
-            'place_brgy_street' => 'pawa',
+            'place_description' => $this->faker->paragraph(5),
+            'place_type' => fake()->randomElement(['dorm', 'apartment', 'bedspace']),
+            'place_region' => fake()->randomElement(['Region 1', 'Region 2', 'CAR']),
+            'place_province_city' => fake()->randomElement(['Ilocos Sur', 'Abra', 'Cagayan']),
+            'place_municipality_town' => fake()->randomElement(['Vigan City', 'Bangued', 'Aparri']),
+            'place_brgy_street' => fake()->randomElement(['Nagtupacan', 'Laang', 'Pawa']),
             'place_email' => fake()->unique()->safeEmail(),
-            'place_contact_num' => '09123456789',
-            'place_room_size' => '10',
-            'place_monthly_rent' => '5000'
+            'place_contact_num' => fake()->unique()->e164PhoneNumber(),
+            'place_room_size' => fake()->randomElement([1, 10]),
+            'place_monthly_rent' => fake()->randomElement([800, 5000])
         ];
     }
 }

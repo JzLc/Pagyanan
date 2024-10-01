@@ -4,10 +4,13 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Listing extends Model
 {
     use HasFactory;
+    use SoftDeletes;
+    
     protected $table = 'listings';
     protected $primaryKey  = 'id';
     protected $fillable = [
@@ -24,7 +27,8 @@ class Listing extends Model
         'place_contact_num',
         'place_room_size',
         'place_monthly_rent',
-        'archived'
+        'archived',
+        'deleted_at'
     ];
     protected $dates  = ['created_at', 'updated_at'];
 

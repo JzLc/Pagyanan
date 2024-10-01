@@ -10,7 +10,7 @@ use App\Models\SavedListing;
 class SavedListingController extends Controller
 {
     // Save a listing for the logged-in user
-    public function save(Request $request)
+    public function store(Request $request)
     {
         $listingId = $request->input('listing_id');
 
@@ -37,7 +37,7 @@ class SavedListingController extends Controller
             ->where('listing_id', $ListingId)
             ->delete();
         
-        return redirect()->route('listings.saved')->with('success', 'List Unsaved');
+        return redirect()->route('savedlistings.index')->with('success', 'List Unsaved');
     }
 
     // Fetch all saved listings for the logged-in user

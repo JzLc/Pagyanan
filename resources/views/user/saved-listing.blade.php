@@ -45,7 +45,7 @@
                                     </td>
                                     <td class="px-4 py-2">
 
-                                        <form action="{{ route('remove.listing', $savedListing->listing->id) }}"
+                                        <form action="{{ route('savedlistings.destroy', $savedListing->listing->id) }}"
                                             method="POST" class="inline-block">
                                             @csrf
                                             @method('DELETE')

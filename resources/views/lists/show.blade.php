@@ -124,7 +124,7 @@
                 let listingId = $(this).data('listing-id');
 
                 $.ajax({
-                    url: '{{ route('save.listing') }}',
+                    url: '{{ route('savedlistings.store') }}',
                     type: 'POST',
                     data: {
                         _token: '{{ csrf_token() }}',
